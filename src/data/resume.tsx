@@ -113,7 +113,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-  image: "/Globe.png",
+      image: "/Globe.png",
       video:
         "",
     },
@@ -169,7 +169,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-  image: "/Heyra.png",
+      image: "/Heyra.png",
       video:
         "",
     },
@@ -194,13 +194,13 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-  image: "/Gaoxy.png",
+      image: "/Gaoxy.png",
       video: "",
     },
   ],
   hackathons: [
     {
-      title: "TDC ITS For Starups 2024",
+      title: "TDC ITS For Startups 2024",
       dates: "Nov 16, 2024",
       location: "Surabaya, East Java",
       description:
@@ -223,7 +223,7 @@ export const DATA = {
       description:
         "Developed a mock of Empower Play Game with Kinect Sensor.",
       image:
-        "https://4get.ducks.party/proxy?i=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.HhLAVEaPteiAgWbRSCYEBwAAAA&s=thumb",
+        "https://4get.ch/proxy?i=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.HhLAVEaPteiAgWbRSCYEBwAAAA&s=thumb",
       links: [
         {
           title: "Source",
@@ -239,7 +239,7 @@ export const DATA = {
       description:
         "UI/UX Design Competition by HMSI UNJAYA: Empowering Everyday Lives, my team developed Gaoxy UI/UX Design for Microalgae-Based Facade System as an Implementation of Eco-Smart Building.",
       image:
-        "https://4get.ducks.party/proxy?i=https%3A%2F%2Fugc.production.linktr.ee%2F58c1c15e-9a80-4944-bb96-c2b4f58a4370_Logo-HMSI.png%3Fio%3Dtrue%26size%3Davatar-v3_0",
+        "https://4get.ch/proxy?i=https%3A%2F%2Fugc.production.linktr.ee%2F58c1c15e-9a80-4944-bb96-c2b4f58a4370_Logo-HMSI.png%3Fio%3Dtrue%26size%3Davatar-v3_0",
       links: [
         {
           title: "Source",
