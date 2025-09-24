@@ -4,7 +4,7 @@ import { HomeIcon, NotebookIcon } from "lucide-react";
 export const DATA = {
   name: "Yusuf",
   initials: "MY",
-  url: "https://dillion.io",
+  url: "https://github.io",
   location: "Surakarta, ID",
   locationLink: "https://www.google.com/maps/place/surakarta",
   description:
@@ -67,12 +67,12 @@ export const DATA = {
       href: "https://www.enumatechnology.com/",
       badges: [],
       location: "Tohudan, Colomadu",
-      title: "IT Consultant",
+      title: "Software Engineer Intern",
       logoUrl: "/enuma.png",
       start: "Aug 2024",
       end: "Jan 2025",
       description:
-        "My internship at Enuma Technology and MersifLab was a transformative experience, where I developed the Heyra app using Angluar, gained Machine Learning visualization skills with Tensorflow, and honed project management and teamwork abilities. Guided by Agile methodology, I gained valuable insights into the professional world, fueling my passion for continuous learning and growth.",
+        "My internship at Enuma Technology and MersifLab was a transformative experience, where I developed the Heyra app using Angular, gained Machine Learning visualization skills with Tensorflow, and honed project management and teamwork abilities. Guided by Agile methodology, I gained valuable insights into the professional world, fueling my passion for continuous learning and growth.",
     },
   ],
   education: [
@@ -87,6 +87,66 @@ export const DATA = {
 
   ],
   projects: [
+    {
+      title: "Real-time Gesture Control",
+      href: "",
+      dates: "Jun 2025",
+      active: true,
+      description:
+        "A 3D interactive globe application controlled in real-time by hand gestures. This project utilizes Computer Vision through a webcam to track hand movements and translate them into commands for manipulating 3D objects.",
+      technologies: [
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Computer Vision",
+        "MediaPipe JS",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/cornfuze/interactive-globe-gesture-control",
+          icon: <Icons.github className="size-3" />,
+        },
+        {
+          type: "Website",
+          href: "https://cornfuze.github.io/interactive-globe-gesture-control/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/globe.png",
+      video:
+        "",
+    },
+    {
+      title: "OMR Grader: Automated Exam Scoring System",
+      href: "",
+      dates: "July 2025",
+      active: true,
+      description:
+        "An interactive web application built with Computer Vision and Streamlit to automate the tedious process of exam correction. It scans Optical Mark Recognition (OMR) sheets and provides instant, accurate grading and analysis.",
+      technologies: [
+        "Python",
+        "Streamlit",
+        "OpenCV",
+        "Computer Vision",
+        "NumPy",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/cornfuze/omr-streamlit-app",
+          icon: <Icons.github className="size-3" />,
+        },
+        {
+          type: "Website",
+          href: "https://cornfuzeomr.streamlit.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/OMR.png",
+      video:
+        "",
+    },
     {
       title: "Heyra",
       href: "",
