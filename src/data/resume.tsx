@@ -118,7 +118,7 @@ export const DATA = {
         "",
     },
     {
-      title: "OMR Grader: Automated Exam Scoring System",
+      title: "OMR Grader",
       href: "",
       dates: "July 2025",
       active: true,
