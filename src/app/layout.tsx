@@ -5,8 +5,8 @@ import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
+import "./globals.css";
 
 const cabinetGrotesk = localFont({
   src: "../../public/fonts/CabinetGrotesk-Medium.ttf",

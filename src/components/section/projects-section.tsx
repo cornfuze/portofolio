@@ -1,59 +1,80 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import { ProjectCard } from "@/components/project-card";
+import type { Project } from "@/data/resume";
 import { DATA } from "@/data/resume";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const BLUR_FADE_DELAY = 0.04;
 
-export default function ProjectsSection() {
-    return (
-        <section id="projects">
-            <div className="flex min-h-0 flex-col gap-y-8">
-                <div className="flex flex-col gap-y-4 items-center justify-center">
-                    <div className="flex items-center w-full">
-                        <div
-                            className="flex-1 h-px bg-linear-to-r from-transparent from-5% via-border via-95% to-transparent"
+type ProjectsSectionProps = {
+  projects?: Project[];
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  ctaHref?: string;
+  ctaLabel?: string;
+};
 
-                        />
-                        <div className="border bg-primary z-10 rounded-xl px-4 py-1">
-                            <span className="text-background text-sm font-medium">My Projects</span>
-                        </div>
-                        <div
-                            className="flex-1 h-px bg-linear-to-l from-transparent from-5% via-border via-95% to-transparent"
-
-                        />
-                    </div>
-                    <div className="flex flex-col gap-y-3 items-center justify-center">
-                        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Check out my latest work</h2>
-                        <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed text-balance text-center">
-                            I&apos;ve worked on a variety of projects, from simple
-                            websites to complex web applications. Here are a few of my
-                            favorites.
-                        </p>
-                    </div>
-                </div>
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto auto-rows-fr">
-                    {DATA.projects.map((project, id) => (
-                        <BlurFade
-                            key={project.title}
-                            delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-                            className="h-full"
-                        >
-                            <ProjectCard
-                                href={project.href}
-                                key={project.title}
-                                title={project.title}
-                                description={project.description}
-                                dates={project.dates}
-                                tags={project.technologies}
-                                image={project.image}
-                                video={project.video}
-                                links={project.links}
-                            />
-                        </BlurFade>
-                    ))}
-                </div>
+export default function ProjectsSection({
+  projects = DATA.projects,
+  eyebrow = "Selected Projects",
+  heading = "The work I want people to remember",
+  description = "A short list from the wider archive.",
+  ctaHref,
+  ctaLabel,
+}: ProjectsSectionProps) {
+  return (
+    <section id="projects">
+      <div className="flex min-h-0 flex-col gap-y-7">
+        <div className="flex flex-col gap-y-4 border-t border-border/40 pt-5">
+          <div className="text-[11px] font-medium uppercase tracking-[0.24em] text-muted-foreground">
+            {eyebrow}
+          </div>
+          <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
+            <div className="max-w-2xl space-y-3">
+              <h2 className="text-3xl font-semibold tracking-tight sm:text-[2.6rem]">
+                {heading}
+              </h2>
+              {description ? (
+                <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
+                  {description}
+                </p>
+              ) : null}
             </div>
-        </section>
-    );
+            {ctaHref && ctaLabel ? (
+              <Link
+                href={ctaHref}
+                className="inline-flex items-center gap-2 self-start text-sm font-medium text-foreground transition-colors hover:text-primary"
+              >
+                {ctaLabel}
+                <ArrowRight className="size-4" />
+              </Link>
+            ) : null}
+          </div>
+        </div>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 auto-rows-fr">
+          {projects.map((project, id) => (
+            <BlurFade
+              key={project.slug}
+              delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+              className="h-full"
+            >
+              <ProjectCard
+                href={project.href}
+                key={project.slug}
+                title={project.title}
+                description={project.description}
+                dates={project.dates}
+                tags={project.technologies}
+                image={project.image}
+                video={project.video}
+                links={project.links}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
-

@@ -14,6 +14,8 @@ import { ArrowUpRight } from "lucide-react";
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
+  const featuredProjects = DATA.projects.filter((project) => project.featured);
+
   return (
     <main className="min-h-dvh flex flex-col gap-14 relative">
       <section id="hero">
@@ -27,7 +29,7 @@ export default function Page() {
                 text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
               />
               <BlurFadeText
-                className="text-muted-foreground max-w-[600px] md:text-lg lg:text-xl"
+                className="text-muted-foreground max-w-150 md:text-lg lg:text-xl"
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
               />
@@ -44,13 +46,19 @@ export default function Page() {
       <section id="about">
         <div className="flex min-h-0 flex-col gap-y-4">
           <BlurFade delay={BLUR_FADE_DELAY * 3}>
-            <h2 className="text-xl font-bold">About</h2>
+            <div className="flex items-center gap-4">
+              <h2 className="text-xl font-bold">About</h2>
+              <div className="h-px flex-1 bg-border/50" />
+            </div>
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
-            <div className="prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
-              <Markdown>
-                {DATA.summary}
-              </Markdown>
+            <div className="max-w-2xl space-y-4">
+              <p className="text-sm text-muted-foreground">{DATA.location}</p>
+              <div className="border-l border-border/60 pl-5">
+                <div className="prose max-w-none text-pretty font-sans leading-8 text-muted-foreground dark:prose-invert">
+                  <Markdown>{DATA.summary}</Markdown>
+                </div>
+              </div>
             </div>
           </BlurFade>
         </div>
@@ -95,7 +103,10 @@ export default function Page() {
                     <div className="flex-1 min-w-0 flex flex-col gap-0.5">
                       <div className="font-semibold leading-none flex items-center gap-2">
                         {education.school}
-                        <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" aria-hidden />
+                        <ArrowUpRight
+                          className="h-3.5 w-3.5 text-muted-foreground opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200"
+                          aria-hidden
+                        />
                       </div>
                       <div className="font-sans text-sm text-muted-foreground">
                         {education.degree}
@@ -120,21 +131,35 @@ export default function Page() {
           </BlurFade>
           <div className="flex flex-wrap gap-2">
             {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill.name} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
+              <BlurFade
+                key={skill.name}
+                delay={BLUR_FADE_DELAY * 10 + id * 0.05}
+              >
                 <div className="border bg-background border-border ring-2 ring-border/20 rounded-xl h-8 w-fit px-4 flex items-center gap-2">
-                  {skill.icon && <skill.icon className="size-4 rounded overflow-hidden object-contain" />}
-                  <span className="text-foreground text-sm font-medium">{skill.name}</span>
+                  {skill.icon && (
+                    <skill.icon className="size-4 rounded overflow-hidden object-contain" />
+                  )}
+                  <span className="text-foreground text-sm font-medium">
+                    {skill.name}
+                  </span>
                 </div>
               </BlurFade>
             ))}
           </div>
         </div>
       </section>
-      <section id="projects">
+      <div>
         <BlurFade delay={BLUR_FADE_DELAY * 11}>
-          <ProjectsSection />
+          <ProjectsSection
+            projects={featuredProjects}
+            eyebrow="Selected Work"
+            heading="A few projects worth opening first."
+            description="A tighter edit from the full archive."
+            ctaHref="/projects"
+            ctaLabel="View all projects"
+          />
         </BlurFade>
-      </section>
+      </div>
       <section id="hackathons">
         <BlurFade delay={BLUR_FADE_DELAY * 13}>
           <HackathonsSection />
