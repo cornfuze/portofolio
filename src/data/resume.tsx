@@ -1,10 +1,14 @@
 import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
+import { Typescript } from "@/components/ui/svgs/typescript";
+import { Nodejs } from "@/components/ui/svgs/nodejs";
+import { Python } from "@/components/ui/svgs/python";
+import { Csharp } from "@/components/ui/svgs/csharp";
 
 export const DATA = {
   name: "Yusuf",
   initials: "MY",
-  url: "https://github.io",
+  url: "https://cornfuze.github.io/portofolio",
   location: "Surakarta, ID",
   locationLink: "https://www.google.com/maps/place/surakarta",
   description:
@@ -13,15 +17,15 @@ export const DATA = {
     "I’m a tech enthusiast and a student with a growing passion for technology and business. I enjoy learning new skills, working on projects, and exploring how technology can solve real-world problems. With a curious mindset and a drive to improve, I’m eager to gain more experience and contribute to impactful solutions. Let’s connect and grow together!",
   avatarUrl: "/me.png",
   skills: [
-    "Angular",
-    "TensorFlow",
-    "Typescript",
-    "Node.js",
-    "Python",
-    "PHP",
-    "Tailwind",
-    "Figma",
-    "C++",
+    { name: "Angular" },
+    { name: "TensorFlow" },
+    { name: "Typescript", icon: Typescript },
+    { name: "Node.js", icon: Nodejs },
+    { name: "Python", icon: Python },
+    { name: "PHP" },
+    { name: "Tailwind" },
+    { name: "Figma" },
+    { name: "C++", icon: Csharp },
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -35,14 +39,12 @@ export const DATA = {
         name: "GitHub",
         url: "https://github.com/cornfuze",
         icon: Icons.github,
-
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
         url: "https://id.linkedin.com/in/em-yusuf",
         icon: Icons.linkedin,
-
         navbar: true,
       },
       Youtube: {
@@ -53,14 +55,12 @@ export const DATA = {
       },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:muhyusuf.sungkar@example.com",
         icon: Icons.email,
-
         navbar: false,
       },
     },
   },
-
   work: [
     {
       company: "Enuma Technology",
@@ -77,14 +77,13 @@ export const DATA = {
   ],
   education: [
     {
-      school: "Duta Bangsa University ",
+      school: "Duta Bangsa University",
       href: "https://udb.ac.id/",
       degree: "Bachelor's degree of Computer Science.",
       logoUrl: "/udb.png",
       start: "2021",
       end: "2025",
     },
-
   ],
   projects: [
     {
@@ -114,8 +113,7 @@ export const DATA = {
         },
       ],
       image: "/Globe.png",
-      video:
-        "",
+      video: "",
     },
     {
       title: "OMR Grader",
@@ -144,8 +142,7 @@ export const DATA = {
         },
       ],
       image: "/OMR.png",
-      video:
-        "",
+      video: "",
     },
     {
       title: "Heyra",
@@ -170,8 +167,7 @@ export const DATA = {
         },
       ],
       image: "/Heyra.png",
-      video:
-        "",
+      video: "",
     },
     {
       title: "Gaoxy",
@@ -205,8 +201,7 @@ export const DATA = {
       location: "Surabaya, East Java",
       description:
         "I participated in the TDC ITS for Startup competition, where my team, Empower Play, reached the grand final top 5 by developing the Heyra application.",
-      image:
-        "/tsf2024.jpg",
+      image: "/tsf2024.jpg",
     },
     {
       title: "INVENTION 2024 UDAYANA",
@@ -220,8 +215,7 @@ export const DATA = {
       title: "I/O Fest UNTAR 2024",
       dates: "May 12th, 2024",
       location: "Online",
-      description:
-        "Developed a mock of Empower Play Game with Kinect Sensor.",
+      description: "Developed a mock of Empower Play Game with Kinect Sensor.",
       image:
         "https://4get.ch/proxy?i=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.HhLAVEaPteiAgWbRSCYEBwAAAA&s=thumb",
       links: [
@@ -249,4 +243,4 @@ export const DATA = {
       ],
     },
   ],
-} as const;
+};
