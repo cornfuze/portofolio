@@ -19,6 +19,7 @@ interface FlickeringGridProps extends React.HTMLAttributes<HTMLDivElement> {
   height?: number;
   className?: string;
   maxOpacity?: number;
+  fps?: number;
 }
 
 export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
@@ -30,6 +31,7 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
   height,
   className,
   maxOpacity = 0.3,
+  fps = 12,
   ...props
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -185,6 +187,12 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
     const animate = (time: number) => {
       if (!isInView) return;
 
+      const frameInterval = 1000 / fps;
+      if (time - lastTime < frameInterval) {
+        animationFrameId = requestAnimationFrame(animate);
+        return;
+      }
+
       const deltaTime = (time - lastTime) / 1000;
       lastTime = time;
 
@@ -225,7 +233,7 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
       resizeObserver.disconnect();
       intersectionObserver.disconnect();
     };
-  }, [setupCanvas, updateSquares, drawGrid, width, height, isInView]);
+  }, [setupCanvas, updateSquares, drawGrid, width, height, isInView, fps]);
 
   return (
     <div

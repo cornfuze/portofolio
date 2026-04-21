@@ -81,7 +81,7 @@ export function ProjectCard({
           <h3 className="font-semibold">{title}</h3>
           <time className="text-xs text-muted-foreground">{dates}</time>
         </div>
-        <div className="text-xs flex-1 prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
+        <div className="text-xs flex-1 prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert text-justify">
           <Markdown>{description}</Markdown>
         </div>
         {tags && tags.length > 0 && (

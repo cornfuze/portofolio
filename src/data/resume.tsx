@@ -137,9 +137,8 @@ export const DATA = {
       description:
         "An integrated public information system for the Ir. Soekarno Type-A Terminal in Klaten, providing real-time bus schedules, passenger facility guides, and the latest operational news.",
       technologies: [
-        "TALL Stack",
         "Laravel",
-        "Tailwind CSS",
+        "Tailwind",
         "Livewire",
         "Alpine.js",
         "MySQL",
@@ -154,6 +153,30 @@ export const DATA = {
         },
       ],
       image: "/webterminal.webp",
+      video: "",
+    },
+    {
+      title: "Sakara Terminal System",
+      slug: "sakara-terminal-system",
+      href: "",
+      dates: "Feb 2026 - Apr 2026",
+      active: true,
+      featured: true,
+      year: 2026,
+      category: "Internal Management System",
+      description:
+        "A high-volume operational dashboard for real-time bus traffic logging (400-500 daily entries). Built with a strict Layered Architecture (UI, App, Infra), featuring a queue-based Google Sheets synchronization with auto-retry, offline PWA foundations, and robust data integrity protections.",
+      technologies: [
+        "Laravel 12",
+        "Livewire 3",
+        "Tailwind",
+        "MySQL",
+        "PHPUnit",
+        "Playwright",
+        "GitHub Actions",
+      ],
+      links: [],
+      image: "/Sts.webp",
       video: "",
     },
     {
@@ -228,7 +251,7 @@ export const DATA = {
       href: "https://github.com/cornfuze/heyra",
       dates: "Sep 2024 - Dec 2025",
       active: true,
-      featured: true,
+      featured: false,
       year: 2024,
       category: "Accessibility",
       description:

@@ -55,7 +55,7 @@ export default function Page() {
             <div className="max-w-2xl space-y-4">
               <p className="text-sm text-muted-foreground">{DATA.location}</p>
               <div className="border-l border-border/60 pl-5">
-                <div className="prose max-w-none text-pretty font-sans leading-8 text-muted-foreground dark:prose-invert">
+                <div className="prose max-w-none text-pretty font-sans leading-8 text-muted-foreground dark:prose-invert text-justify">
                   <Markdown>{DATA.summary}</Markdown>
                 </div>
               </div>

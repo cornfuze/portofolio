@@ -10,14 +10,15 @@ import "./globals.css";
 
 const cabinetGrotesk = localFont({
   src: "../../public/fonts/CabinetGrotesk-Medium.ttf",
-  variable: "--font-sans",
+  variable: "--font-cabinet-grotesk",
   display: "swap",
 });
 
 const clashDisplay = localFont({
   src: "../../public/fonts/ClashDisplay-Semibold.ttf",
-  variable: "--font-mono",
+  variable: "--font-clash-display",
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {

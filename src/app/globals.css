@@ -5,6 +5,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
+  --font-sans: var(--font-cabinet-grotesk);
+  --font-mono: var(--font-clash-display);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -133,7 +135,7 @@
     background-color: transparent;
   }
 
-.prose pre {
+  .prose pre {
     @apply leading-relaxed bg-transparent! font-mono!;
   }
 
@@ -141,7 +143,8 @@
     @apply m-0! mx-1! border rounded-md! px-1.5 py-0.5 bg-muted/60 dark:bg-muted/40 text-[13px]! font-mono text-foreground/90!;
   }
 
-  .prose code::before, .prose code::after {
+  .prose code::before,
+  .prose code::after {
     @apply content-none!;
   }
 
@@ -186,50 +189,52 @@
   }
 
   /* Task lists (remark-gfm): remove bullet marker so it renders like a pure checklist */
-  .prose :where(ul.contains-task-list):not(:where([class~="not-prose"] *)) {
+  .prose :where(ul.contains-task-list):not(
+      :where(.not-prose, .not-prose *)
+    ) {
     @apply list-none! pl-0!;
   }
 
-  .prose :where(li.task-list-item):not(:where([class~="not-prose"] *)) {
+  .prose :where(li.task-list-item):not(:where(.not-prose, .not-prose *)) {
     @apply pl-0!;
   }
 
   .prose
     :where(li.task-list-item > input[type="checkbox"]):not(
-      :where([class~="not-prose"] *)
+      :where(.not-prose, .not-prose *)
     ) {
     @apply mr-2 align-middle!;
   }
 
-  .prose :where(table):not(:where([class~="not-prose"]) *) {
+  .prose :where(table):not(:where(.not-prose, .not-prose *)) {
     @apply w-full min-w-full;
     border-collapse: separate;
     border-spacing: 0;
   }
 
-  .prose :where(th):not(:where([class~="not-prose"] *)),
-  .prose :where(td):not(:where([class~="not-prose"] *)) {
+  .prose :where(th):not(:where(.not-prose, .not-prose *)),
+  .prose :where(td):not(:where(.not-prose, .not-prose *)) {
     @apply px-6 py-4 align-middle m-0 whitespace-nowrap;
   }
 
-  .prose tr{
+  .prose tr {
     @apply hover:bg-accent/50! transition-colors! cursor-pointer! h-10!;
   }
 
-  .prose :where(th):not(:where([class~="not-prose"] *)) {
+  .prose :where(th):not(:where(.not-prose, .not-prose *)) {
     @apply text-left font-semibold text-foreground border-b border-border m-0! bg-muted/50 p-3! py-2!;
   }
 
-  .prose :where(td):not(:where([class~="not-prose"] *)) {
+  .prose :where(td):not(:where(.not-prose, .not-prose *)) {
     @apply text-muted-foreground border-b border-border text-sm! p-2!;
   }
 
-  .prose :where(th:not(:last-child)):not(:where([class~="not-prose"] *)),
-  .prose :where(td:not(:last-child)):not(:where([class~="not-prose"] *)) {
+  .prose :where(th:not(:last-child)):not(:where(.not-prose, .not-prose *)),
+  .prose :where(td:not(:last-child)):not(:where(.not-prose, .not-prose *)) {
     @apply border-r border-border;
   }
 
-  .prose :where(tbody tr:last-child td):not(:where([class~="not-prose"] *)) {
+  .prose :where(tbody tr:last-child td):not(:where(.not-prose, .not-prose *)) {
     @apply border-b-0;
   }
 

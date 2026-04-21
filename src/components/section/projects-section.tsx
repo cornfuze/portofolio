@@ -37,7 +37,7 @@ export default function ProjectsSection({
                 {heading}
               </h2>
               {description ? (
-                <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
+                <p className="max-w-xl text-base leading-relaxed text-muted-foreground text-justify">
                   {description}
                 </p>
               ) : null}

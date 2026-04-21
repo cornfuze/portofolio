@@ -32,7 +32,7 @@ export default function HackathonsSection() {
             <div className="flex-1 h-px bg-linear-to-r from-transparent from-5% via-border via-95% to-transparent" />
             <div className="border bg-primary z-10 rounded-xl px-4 py-1">
               <span className="text-background text-sm font-medium">
-                Hackathons
+                Competitions
               </span>
             </div>
             <div className="flex-1 h-px bg-linear-to-l from-transparent from-5% via-border via-95% to-transparent" />
@@ -41,12 +41,12 @@ export default function HackathonsSection() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
               I like building things
             </h2>
-            <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed text-balance text-center">
-              During my time in university, I attended {hackathons.length}+
-              hackathons. People from around the country would come together and
-              build incredible things in 2-3 days. It was eye-opening to see the
-              endless possibilities brought to life by a group of motivated and
-              passionate individuals.
+            <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed text-pretty text-center sm:text-justify">
+              During my university years, I participated in {hackathons.length}+
+              competitions. These events brought together talented individuals
+              from across the country to innovate and showcase their skills.
+              These experiences provided invaluable insights and the opportunity
+              to collaborate with driven and passionate peers.
             </p>
           </div>
         </div>
@@ -84,7 +84,7 @@ export default function HackathonsSection() {
                   </p>
                 )}
                 {hackathon.description && (
-                  <p className="text-sm text-muted-foreground leading-relaxed wrap-break-word">
+                  <p className="text-sm text-muted-foreground leading-relaxed wrap-break-word text-justify">
                     {hackathon.description}
                   </p>
                 )}
